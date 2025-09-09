@@ -1,0 +1,31 @@
+.main-container-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  /* background-color: orange; */
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-height: 20px;
+  margin-bottom: 20px;
+  font-size: large;
+  width: stretch;
+}
+
+.btn-bottom {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: oklch(62.3% 0.214 259.815);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-height: 30px;
+  margin-bottom: 20px;
+  font-size: large;
+  width: stretch;
+}
