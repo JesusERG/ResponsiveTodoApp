@@ -27,6 +27,15 @@ const TodoApp = () => {
     { id: 1, title: "Task 1", isCompleted: false },
     { id: 2, title: "Task 2", isCompleted: false },
   ]);
+
+  const handleAddTask = (newTodo: {
+    id: number;
+    title: string;
+    isCompleted: boolean;
+  }) => {
+    setCurrentTodoList((prev) => [...prev, newTodo]);
+  };
+
   return (
     <div className="main-container">
       <div className="todo-app-container">
@@ -34,7 +43,7 @@ const TodoApp = () => {
         <TodoList todoList={curretTodoList} setTodoList={setCurrentTodoList} />
       </div>
       <div className="todo-bottom-bar-container">
-        <TodoBottomBar todos={curretTodoList} addTask={setCurrentTodoList} />
+        <TodoBottomBar todos={curretTodoList} addTask={handleAddTask} />
       </div>
     </div>
   );

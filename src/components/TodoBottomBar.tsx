@@ -1,7 +1,19 @@
 import { useState } from "react";
 import "../css/TodoBottomBar.css";
 
-const TodoBottomBar = ({ todos, addTask }) => {
+export interface TodoItem {
+  id: number;
+  title: string;
+  isCompleted: boolean;
+}
+
+const TodoBottomBar = ({
+  todos,
+  addTask,
+}: {
+  todos: TodoItem[];
+  addTask: (prev: TodoItem) => void;
+}) => {
   const [userInput, setUserInput] = useState("");
 
   console.log("todos: ", todos);
@@ -12,6 +24,7 @@ const TodoBottomBar = ({ todos, addTask }) => {
       title: userInput,
       isCompleted: false,
     };
+    // @ts-ignore
     addTask((prev) => [...prev, newTodo]);
     setUserInput("");
     console.log(todos);
